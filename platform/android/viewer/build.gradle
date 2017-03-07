@@ -13,7 +13,7 @@ allprojects {
 	}
 }
 
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 dependencies {
 	compile fileTree(dir: 'libs', include: '*.so')
@@ -58,7 +58,7 @@ android {
 
 //  This defines the path to Android's ndk-build.
 import org.apache.tools.ant.taskdefs.condition.Os
-def ndkBuildPath = plugins.getPlugin('com.android.application').sdkHandler.getNdkFolder().absolutePath + File.separator + 'ndk-build'
+def ndkBuildPath = plugins.getPlugin('com.android.library').sdkHandler.getNdkFolder().absolutePath + File.separator + 'ndk-build'
 if (Os.isFamily(Os.FAMILY_WINDOWS)) {
 	ndkBuildPath +='.cmd'
 }
